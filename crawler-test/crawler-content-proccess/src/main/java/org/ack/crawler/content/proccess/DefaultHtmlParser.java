@@ -24,7 +24,8 @@ public class DefaultHtmlParser extends AbstractHtmlParser {
 		Element sectionName = e.first().getElementsByTag("h1").first();
 		String name = sectionName.text() + System.getProperty("line.separator");
 		Element content = doc.getElementById(id);
-		String s = name + content.text();
+		String txt = content.text().trim();
+		String s = name + txt;
 		/*
 		StringFilter sf = new StringFilter();
 		s = sf.filterBlank(s);
